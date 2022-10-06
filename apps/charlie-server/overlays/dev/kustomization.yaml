@@ -10,3 +10,7 @@ namespace: charlie-dev
 
 commonAnnotations:
   Projeto: Charlie
+
+images:
+- name: acrcharliehypera.azurecr.io/charlie-server
+  newTag: v0.0.1-dev
