@@ -13,4 +13,4 @@ commonAnnotations:
 
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
-  newTag: v0.0.1-dev
+  newTag: 89f9611cc5fbcea47a2439f523fc2396f9ffddfb-dev
