@@ -1,7 +1,7 @@
 {
   "appName": "charlie-server",
   "userGivenName": "charlie-server",
-  "destNamespace": "default",
+  "destNamespace": "charlie-prd",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "apps/charlie-server/overlays/prd",
   "srcRepoURL": "https://github.com/julianobarbosa/hypera-cluster-argocd.git",
