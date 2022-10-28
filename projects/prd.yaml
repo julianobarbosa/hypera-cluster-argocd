@@ -88,5 +88,8 @@ spec:
         repoURL: '{{ srcRepoURL }}'
         targetRevision: '{{ srcTargetRevision }}'
       syncPolicy:
-        automated: {}
+        automated: 
+          allowEmpty: true
+          prune: true
+          selfHeal: false
 status: {}
