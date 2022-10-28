@@ -12,9 +12,9 @@ spec:
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
-  description: prd project
+  description: charlie-server-prd
   destinations:
-  - namespace: '*'
+  - namespace: 'charlie-prd'
     server: '*'
   namespaceResourceWhitelist:
   - group: '*'
