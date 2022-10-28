@@ -9,7 +9,7 @@ nameSuffix: -dev
 namespace: charlie-dev
 
 commonAnnotations:
-  Projeto: Charlie
+  Projeto: Charlie-dev
 
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server

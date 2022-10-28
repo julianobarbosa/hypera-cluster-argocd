@@ -8,7 +8,7 @@ nameSuffix: -prd
 namespace: charlie-prd
 
 commonAnnotations:
-  Projeto: Charlie
+  Projeto: Charlie-prd
 
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
