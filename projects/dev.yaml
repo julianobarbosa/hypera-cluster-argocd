@@ -12,9 +12,9 @@ spec:
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
-  description: dev project
+  description: charlie-server-dev
   destinations:
-  - namespace: '*'
+  - namespace: 'charlie-dev'
     server: '*'
   namespaceResourceWhitelist:
   - group: '*'
