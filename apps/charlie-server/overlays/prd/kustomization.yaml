@@ -12,4 +12,4 @@ commonAnnotations:
 
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
-  newTag: 1.0.0-1355-prd
+  newTag: 1.0.0-1356-prd
