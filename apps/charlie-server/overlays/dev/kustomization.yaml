@@ -10,7 +10,17 @@ resources:
 
 commonAnnotations:
   Projeto: Charlie-dev
+  env: dev
+
+patches:
+- path: env-patch.yaml
+  target:
+    group: apps
+    kind: Deployment
+    name: charlie-server-deploy
+    version: v1
 
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
   newTag: 1.0.0-1368-dev
+

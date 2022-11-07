@@ -10,7 +10,15 @@ resources:
 
 commonAnnotations:
   Projeto: Charlie-prd
+  env: prd
 
+patches:
+- path: env-patch.yaml
+  target:
+    group: apps
+    kind: Deployment
+    name: charlie-server-deploy
+ 
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
   newTag: 1.0.0-1368-prd
