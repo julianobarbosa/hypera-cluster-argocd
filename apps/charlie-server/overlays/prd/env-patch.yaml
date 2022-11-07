@@ -10,4 +10,4 @@ spec:
         - name: charlie-server
           env:
           - name: ASPNETCORE_ENVIRONMENT
-            value: Development
+            value: Production
