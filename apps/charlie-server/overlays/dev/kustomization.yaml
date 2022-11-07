@@ -22,4 +22,4 @@ patches:
 
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
-  newTag: 1.0.0-1371-dev
+  newTag: 1.0.0-1373-dev
