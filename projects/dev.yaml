@@ -66,11 +66,7 @@ spec:
                 jsonnet: {}
                 recurse: true
               repoURL: ""
-  syncPolicy:
-    automated:
-      prune: true
-      allowEmpty: true
-      selfHeal: true
+  syncPolicy: {}
   template:
     metadata:
       labels:
@@ -92,6 +88,10 @@ spec:
         path: '{{ srcPath }}'
         repoURL: '{{ srcRepoURL }}'
         targetRevision: '{{ srcTargetRevision }}'
-      syncPolicy: {}
+      syncPolicy:
+        automated:
+          prune: true
+          allowEmpty: true
+          selfHeal: true
     
 status: {}
