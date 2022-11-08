@@ -21,9 +21,9 @@ patches:
     version: v1
 
 patchesStrategicMerge:
-  - ./ingress-web-patch.yaml
-  - ./ingress-websecure-patch.yaml
+- ./ingress-web-patch.yaml
+- ./ingress-websecure-patch.yaml
 
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
-  newTag: 1.0.0-1373-dev
+  newTag: 1.0.0-1374-dev
