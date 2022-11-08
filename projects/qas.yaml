@@ -1,3 +1,4 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -6,21 +7,21 @@ metadata:
     argocd.argoproj.io/sync-options: PruneLast=true
     argocd.argoproj.io/sync-wave: "-2"
   creationTimestamp: null
-  name: qas
+  name: prd
   namespace: argocd
 spec:
   clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
-  description: qas project
+    - group: '*'
+      kind: '*'
+  description: charlie-server-prd
   destinations:
-  - namespace: '*'
-    server: '*'
+    - namespace: 'charlie-prd'
+      server: '*'
   namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
+    - group: '*'
+      kind: '*'
   sourceRepos:
-  - '*'
+    - '*'
 status: {}
 
 ---
@@ -30,66 +31,62 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   creationTimestamp: null
-  name: qas
+  name: prd
   namespace: argocd
 spec:
   generators:
-  - git:
-      files:
-      - path: apps/**/qas/config.json
-      repoURL: https://github.com/julianobarbosa/hypera-cluster-argocd.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            repoURL: ""
-  - git:
-      files:
-      - path: apps/**/qas/config_dir.json
-      repoURL: https://github.com/julianobarbosa/hypera-cluster-argocd.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            directory:
-              exclude: '{{ exclude }}'
-              include: '{{ include }}'
-              jsonnet: {}
-              recurse: true
-            repoURL: ""
+    - git:
+        files:
+          - path: apps/**/prd/config.json
+        repoURL: https://github.com/julianobarbosa/hypera-cluster-argocd.git
+        requeueAfterSeconds: 20
+        revision: ""
+        template:
+          metadata: {}
+          spec:
+            destination: {}
+            project: ""
+            source:
+              repoURL: ""
+    - git:
+        files:
+          - path: apps/**/prd/config_dir.json
+        repoURL: https://github.com/julianobarbosa/hypera-cluster-argocd.git
+        requeueAfterSeconds: 20
+        revision: ""
+        template:
+          metadata: {}
+          spec:
+            destination: {}
+            project: ""
+            source:
+              directory:
+                exclude: '{{ exclude }}'
+                include: '{{ include }}'
+                jsonnet: {}
+                recurse: true
+              repoURL: ""
   syncPolicy: {}
   template:
     metadata:
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
         app.kubernetes.io/name: '{{ appName }}'
-      name: {{ userGivenName }}-qas
+      name: '{{ userGivenName }}'
       namespace: argocd
     spec:
       destination:
         namespace: '{{ destNamespace }}'
         server: '{{ destServer }}'
       ignoreDifferences:
-      - group: argoproj.io
-        jsonPointers:
-        - /status
-        kind: Application
-      project: qas
+        - group: argoproj.io
+          jsonPointers:
+            - /status
+          kind: Application
+      project: prd
       source:
         path: '{{ srcPath }}'
         repoURL: '{{ srcRepoURL }}'
         targetRevision: '{{ srcTargetRevision }}'
-      syncPolicy:
-        automated:
-          allowEmpty: true
-          prune: true
-          selfHeal: true
+      syncPolicy: {}
 status: {}

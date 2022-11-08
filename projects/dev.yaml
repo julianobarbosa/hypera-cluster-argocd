@@ -1,3 +1,4 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -10,17 +11,17 @@ metadata:
   namespace: argocd
 spec:
   clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
+    - group: '*'
+      kind: '*'
   description: charlie-server-dev
   destinations:
-  - namespace: 'charlie-dev'
-    server: '*'
+    - namespace: 'charlie-dev'
+      server: '*'
   namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
+    - group: '*'
+      kind: '*'
   sourceRepos:
-  - '*'
+    - '*'
 status: {}
 
 ---
@@ -34,54 +35,54 @@ metadata:
   namespace: argocd
 spec:
   generators:
-  - git:
-      files:
-      - path: apps/**/dev/config.json
-      repoURL: https://github.com/julianobarbosa/hypera-cluster-argocd.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            repoURL: ""
-  - git:
-      files:
-      - path: apps/**/dev/config_dir.json
-      repoURL: https://github.com/julianobarbosa/hypera-cluster-argocd.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            directory:
-              exclude: '{{ exclude }}'
-              include: '{{ include }}'
-              jsonnet: {}
-              recurse: true
-            repoURL: ""
+    - git:
+        files:
+          - path: apps/**/dev/config.json
+        repoURL: https://github.com/julianobarbosa/hypera-cluster-argocd.git
+        requeueAfterSeconds: 20
+        revision: ""
+        template:
+          metadata: {}
+          spec:
+            destination: {}
+            project: ""
+            source:
+              repoURL: ""
+    - git:
+        files:
+          - path: apps/**/dev/config_dir.json
+        repoURL: https://github.com/julianobarbosa/hypera-cluster-argocd.git
+        requeueAfterSeconds: 20
+        revision: ""
+        template:
+          metadata: {}
+          spec:
+            destination: {}
+            project: ""
+            source:
+              directory:
+                exclude: '{{ exclude }}'
+                include: '{{ include }}'
+                jsonnet: {}
+                recurse: true
+              repoURL: ""
   syncPolicy: {}
   template:
     metadata:
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
         app.kubernetes.io/name: '{{ appName }}'
-      name: {{ userGivenName }}-dev
+      name: '{{ userGivenName }}'
       namespace: argocd
     spec:
       destination:
         namespace: '{{ destNamespace }}'
         server: '{{ destServer }}'
       ignoreDifferences:
-      - group: argoproj.io
-        jsonPointers:
-        - /status
-        kind: Application
+        - group: argoproj.io
+          jsonPointers:
+            - /status
+          kind: Application
       project: dev
       source:
         path: '{{ srcPath }}'
