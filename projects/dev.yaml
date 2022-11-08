@@ -89,5 +89,7 @@ spec:
         path: '{{ srcPath }}'
         repoURL: '{{ srcRepoURL }}'
         targetRevision: '{{ srcTargetRevision }}'
-      syncPolicy: {}
+      syncPolicy:
+        automated: {} 
+    
 status: {}
