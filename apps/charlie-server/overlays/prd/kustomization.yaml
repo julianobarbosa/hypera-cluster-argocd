@@ -5,8 +5,8 @@ nameSuffix: -prd
 namespace: charlie-prd
 
 resources:
-  - ../../base
-  - ns.yaml
+- ../../base
+- ns.yaml
 
 commonAnnotations:
   Projeto: Charlie-prd
@@ -21,4 +21,4 @@ patches:
  
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
-  newTag: 1.0.0-1369-prd
+  newTag: 1.0.0-1373-prd
