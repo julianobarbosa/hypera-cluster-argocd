@@ -71,7 +71,7 @@ spec:
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
         app.kubernetes.io/name: '{{ appName }}'
-      name: {{ userGivenName }}-dev
+      name: dev-{{ userGivenName }}
       namespace: argocd
     spec:
       destination:
@@ -88,4 +88,7 @@ spec:
         repoURL: '{{ srcRepoURL }}'
         targetRevision: '{{ srcTargetRevision }}'
       syncPolicy: {}
+          allowEmpty: true
+          prune: true
+          selfHeal: true
 status: {}
