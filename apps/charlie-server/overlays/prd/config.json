@@ -1,6 +1,6 @@
 {
-  "appName": "charlie-server",
-  "userGivenName": "charlie-server",
+  "appName": "charlie-server-prd",
+  "userGivenName": "charlie-server-prd",
   "destNamespace": "charlie-prd",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "apps/charlie-server/overlays/prd",
