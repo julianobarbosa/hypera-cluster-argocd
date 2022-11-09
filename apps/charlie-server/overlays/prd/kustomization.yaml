@@ -21,4 +21,4 @@ patches:
  
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
-  newTag: 1.0.0-1401-prd
+  newTag: 1.0.0-1404-prd
