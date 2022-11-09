@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: charlie-server-websecure
+spec:
+  entryPoints:
+    - websecure
+  tls: 
+    secretName: hypera-ca-secret
+  routes:
+    - match: Host(`automacaoqas.hypera.com.br`)
+      kind: Rule
+      services:
+        - name: charlie-server-service-qas
+          port: 80
