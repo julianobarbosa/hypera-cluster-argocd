@@ -19,4 +19,4 @@ patches:
  
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
-  newTag: 1.0.0-1399-qas
+  newTag: 1.0.0-1400-qas
