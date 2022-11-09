@@ -6,24 +6,24 @@ nameSuffix: -dev
 namespace: charlie-dev
 
 resources:
-- ../../base
+  - ../../base
 
 commonAnnotations:
   Projeto: Charlie-dev
   env: dev
 
 patches:
-- path: env-patch.yaml
-  target:
-    group: apps
-    kind: Deployment
-    name: charlie-server-deploy
-    version: v1
+  - path: env-patch.yaml
+    target:
+      group: apps
+      kind: Deployment
+      name: charlie-server-deploy
+      version: v1
 
 patchesStrategicMerge:
-- ./ingress-web-patch.yaml
-- ./ingress-websecure-patch.yaml
+  - ./ingress-web-patch.yaml
+  - ./ingress-websecure-patch.yaml
 
 images:
-- name: acrcharliehypera.azurecr.io/charlie-server
-  newTag: 1.0.0-1399-dev
+  - name: acrcharliehypera.azurecr.io/charlie-server
+    newTag: 1.0.0-1399-dev

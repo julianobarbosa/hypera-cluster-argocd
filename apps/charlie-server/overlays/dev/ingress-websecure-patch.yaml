@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - websecure
   tls: 
-    secretName: hypera-ca-secret
+    secretName: hypera-ca-secret-dev
   routes:
     - match: Host(`automacaodev.hypera.com.br`)
       kind: Rule

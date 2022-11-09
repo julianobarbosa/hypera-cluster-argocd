@@ -10,7 +10,7 @@ spec:
     - match: Host(`automacaodev.hypera.com.br`)
       kind: Rule
       middlewares:
-        - name: redirect-to-https
+        - name: redirect-to-https-dev
       services:
         - name: charlie-server-service-dev
           port: 80
