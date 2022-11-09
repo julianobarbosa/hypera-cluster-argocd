@@ -1,0 +1,11 @@
+{
+  "appName": "charlie-server-qas",
+  "userGivenName": "charlie-server-qas",
+  "destNamespace": "charlie-qas",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/charlie-server/overlays/qas",
+  "srcRepoURL": "https://github.com/julianobarbosa/hypera-cluster-argocd.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
