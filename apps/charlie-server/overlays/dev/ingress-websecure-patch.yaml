@@ -9,7 +9,7 @@ spec:
   tls: 
     secretName: hypera-ca-secret
   routes:
-    - match: Host(`automacaoqas.hypera.com.br`)
+    - match: Host(`automacaodev.hypera.com.br`)
       kind: Rule
       services:
         - name: charlie-server-service-dev

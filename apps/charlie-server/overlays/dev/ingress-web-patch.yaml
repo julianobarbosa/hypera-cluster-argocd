@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`automacaoqas.hypera.com.br`)
+    - match: Host(`automacaodev.hypera.com.br`)
       kind: Rule
       middlewares:
         - name: redirect-to-https
