@@ -1,20 +1,5 @@
-# Please edit the object below. Lines beginning with a '#' will be ignored,
-# and an empty file will abort the edit. If an error occurs while saving this file will be
-# reopened with the relevant failures.
-#
 apiVersion: v1
-data:
-  webmail.hypera.com.br: '{ username: sogroup@hypera.com.br, host: webmail.hypera.com.br,
-    port: 25, from: sogroup@hypera.com.br }'
 kind: ConfigMap
 metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"v1","kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"argo-cd"},"name":"argocd-notifications-cm","namespace":"argocd"}}
-  creationTimestamp: "2022-10-04T20:15:23Z"
-  labels:
-    app.kubernetes.io/instance: argo-cd
   name: argocd-notifications-cm
   namespace: argocd
-  resourceVersion: "5794431"
-  uid: 9ab201a4-eba4-4020-98e5-5547bee0f0b8
