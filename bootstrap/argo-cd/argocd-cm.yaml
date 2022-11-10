@@ -1,9 +1,8 @@
-# Please edit the object below. Lines beginning with a '#' will be ignored,
-# and an empty file will abort the edit. If an error occurs while saving this file will be
-# reopened with the relevant failures.
-#
 apiVersion: v1
 data:
+  accounts.aabreu: login
+  accounts.alex_abreu: login
+  accounts.devops: apikey, login
   repository.credentials: |
     - passwordSecret:
         key: git_token
@@ -25,5 +24,5 @@ metadata:
     app.kubernetes.io/part-of: argocd
   name: argocd-cm
   namespace: argocd
-  resourceVersion: "1678903"
+  resourceVersion: "6085518"
   uid: d081073c-1240-4355-a830-2111348efc5b
