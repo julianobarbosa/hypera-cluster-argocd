@@ -7,5 +7,6 @@
   "srcRepoURL": "https://github.com/julianobarbosa/hypera-cluster-argocd.git",
   "srcTargetRevision": "",
   "labels": null,
-  "annotations": null
+  "annotations":
+    - notifications.argoproj.io/subscribe.on-sync-succeeded.teams: channelName
 }
