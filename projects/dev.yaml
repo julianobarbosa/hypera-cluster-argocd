@@ -93,9 +93,4 @@ spec:
           prune: true
           allowEmpty: true
           selfHeal: true
-        syncOptions:
-          - CreateNamespace=true
-        managedNamespaceMetadata:
-          annotations:
-            notifications.argoproj.io/subscribe.on-sync-succeeded.teams: channelName
 status: {}
