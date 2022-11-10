@@ -17,4 +17,4 @@ resources:
   - github.com/argoproj-labs/argocd-autopilot/manifests/base?ref=v0.4.7
 
 patchesStrategicMerge:
-  - ./base/argocd-rbac-cm.yaml
+  - ./argocd-rbac-cm.yaml
