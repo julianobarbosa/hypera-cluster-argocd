@@ -10,7 +10,7 @@ spec:
     - match: Host(`automacaoqas.hypera.com.br`)
       kind: Rule
       middlewares:
-        - name: redirect-to-https
+        - name: redirect-to-https-qas
       services:
         - name: charlie-server-service-qas
           port: 80
