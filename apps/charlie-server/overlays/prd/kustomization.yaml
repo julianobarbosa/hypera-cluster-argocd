@@ -5,8 +5,8 @@ nameSuffix: -prd
 namespace: charlie-prd
 
 resources:
-- ../../base
-- ns.yaml
+  - ../../base
+  - ns.yaml
 
 commonAnnotations:
   Projeto: Charlie-prd
@@ -20,9 +20,9 @@ patches:
     name: charlie-server-deploy
  
 patchesStrategicMerge:
-- ./ingress-web-patch.yaml
-- ./ingress-websecure-patch.yaml
+  - ./ingress-web-patch.yaml
+  - ./ingress-websecure-patch.yaml
 
 images:
-- name: acrcharliehypera.azurecr.io/charlie-server
-  newTag: 1.0.0-1456-prd
+  - name: acrcharliehypera.azurecr.io/charlie-server
+    newTag: 1.0.0-1456-prd
