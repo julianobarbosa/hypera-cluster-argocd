@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: charlie-server-deploy-qas
+  name: charlie-server-deploy-dev
 spec:
   template:
     spec:
