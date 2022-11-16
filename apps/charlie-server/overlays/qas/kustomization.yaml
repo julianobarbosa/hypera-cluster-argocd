@@ -1,31 +1,31 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
+- ../../base
 
 nameSuffix: -qas
 
 namespace: charlie-qas
 
 resources:
-  - ../../base
+- ../../base
 
 commonAnnotations:
   Projeto: Charlie-qas
   env: qas
 
 patches:
-  - path: env-patch.yaml
-    target:
-      group: apps
-      kind: Deployment
-      name: charlie-server-deploy
-      version: v1
+- path: env-patch.yaml
+  target:
+    group: apps
+    kind: Deployment
+    name: charlie-server-deploy
+    version: v1
 
 patchesStrategicMerge:
-  - ./ingress-web-patch.yaml
-  - ./ingress-websecure-patch.yaml
+- ./ingress-web-patch.yaml
+- ./ingress-websecure-patch.yaml
 
 images:
-  - name: acrcharliehypera.azurecr.io/charlie-server
-    newTag: 1.0.0-1459-qas
+- name: acrcharliehypera.azurecr.io/charlie-server
+  newTag: 1.0.0-1463-qas
