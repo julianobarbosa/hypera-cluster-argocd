@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+data:
+  accounts.aabreu: login
+  accounts.alex_abreu: login
+  accounts.andre_vaz: login
+  accounts.andre_vieira: login
+  accounts.david_junior: login
+  accounts.devops: apikey, login
+  accounts.juliano_barbosa: apikey, login
+kind: ConfigMap
+metadata:
+  name: argocd-cm
