@@ -18,3 +18,4 @@ resources:
 
 patchesStrategicMerge:
   - ./argocd-cm-merge.yaml
+  - ./argocd-rbac-cm-merge.yaml

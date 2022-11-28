@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-rbac-cm
+data:
+  policy.default: role:readonly
+  policy.csv: |
+    p, role:org-admin, applications, *, */*, allow
+    p, role:org-admin, clusters, get, *, allow
+    p, role:org-admin, repositories, get, *, allow
+    p, role:org-admin, repositories, create, *, allow
+    p, role:org-admin, repositories, update, *, allow
+    p, role:org-admin, repositories, delete, *, allow
+    p, role:org-admin, logs, get, *, allow
+    p, role:org-admin, exec, create, */*, allow
+
+    # dev
+    p, role:g_charlie_admin, applications/charlie-server-dev, create, g_charlie_admin/*, allow
+    p, role:g_charlie_admin, applications/charlie-server-dev, get, g_charlie_admin/*, allow
+    p, role:g_charlie_admin, applications/charlie-server-dev, sync, g_charlie_admin/*, allow
+
+    # qas
+    p, role:g_charlie_admin, applications/charlie-server-qas, create, g_charlie_admin/*, allow
+    p, role:g_charlie_admin, applications/charlie-server-qas, get, g_charlie_admin/*, allow
+    p, role:g_charlie_admin, applications/charlie-server-qas, sync, g_charlie_admin/*, allow
+
+    # prd
+    p, role:g_charlie_admin, applications/charlie-server-prd, sync, g_charlie_admin/*, allow
+
+    p, role:g_charlie_admin, logs, get, g_charlie_admin/*, allow
+    p, role:g_charlie_admin, exec, create, g_charlie_admin/*, allow
+    p, role:g_charlie_admin, projects, get, g_charlie_admin, allow
+
+    p, role:g_charlie_admin, projects, get, g_charlie_admin, allow
+
+    g, db-admins, role:g_charlie_admin
+
+    g, alex_abreu, role:g_charlie_admino
+
+    g, g_charlie_prj_ro, role:admin-charlie_prj_ro
+    g, g_charlie_prj_rw, role:admin-charlie_prj_rw
+
