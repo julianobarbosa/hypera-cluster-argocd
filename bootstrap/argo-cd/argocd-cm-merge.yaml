@@ -6,8 +6,8 @@ data:
   accounts.andre_vaz: login
   accounts.andre_vieira: login
   accounts.david_junior: login
-  accounts.devops: apikey, login
-  accounts.juliano_barbosa: apikey, login
+  accounts.devops: login
+  accounts.juliano_barbosa: login
 kind: ConfigMap
 metadata:
   name: argocd-cm
