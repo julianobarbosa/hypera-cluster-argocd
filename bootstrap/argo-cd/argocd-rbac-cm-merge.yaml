@@ -48,7 +48,3 @@ data:
     g, andre_vieira, role:admin
     g, david_junior, role:admin
     g, juliano_barbosa, role:admin
-
-    # prd
-    p, role:g_argocd_charlie_admin, applications, sync, */*, allow
-    p, alex_abreu, role:g_argocd_charlie_admin
