@@ -25,8 +25,17 @@ data:
     p, role:devops, repositories, delete, *, allow
     p, role:devops, gpgkeys, get, *, allow
 
+    "p, proj:prd:prd:alex_abreu, applications, override, prd/*, allow",
+    "p, proj:prd:prd:alex_abreu, clusters, get, prd/*, allow",
+    "p, proj:prd:prd:aplex_abreu, applications, sync, prd/*, allow",
+    "p, proj:prd:alex_abreu, repositories, create, prd/*, allow",
+    "p, proj:prd:alex_abreu, repositories, delete, prd/*, allow",
+    "p, proj:prd:alex_abreu, repositories, update, prd/*, allow",
+    "p, proj:prd:alex_abreu, logs, get, prd/*, allow",
+    "p, proj:prd:alex_abreu, exec, create, prd/*, allow",
+
     # prd
-    p, alex_abreu, applications, sync, applications/argocd/charlie-server-prd/*, allow
+    # p, alex_abreu, applications, sync, applications/argocd/charlie-server-prd/*, allow
 
     # devops
     g, devops_user, role:devops
