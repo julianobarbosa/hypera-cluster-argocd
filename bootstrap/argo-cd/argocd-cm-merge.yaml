@@ -6,7 +6,7 @@ data:
   accounts.andre_vaz: login
   accounts.andre_vieira: login
   accounts.david_junior: login
-  accounts.devops: login
+  accounts.devops_user: login
   accounts.juliano_barbosa: login
 kind: ConfigMap
 metadata:

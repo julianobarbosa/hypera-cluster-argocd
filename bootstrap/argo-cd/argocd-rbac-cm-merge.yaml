@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
 data:
-  policy.default: role:readonly
+  policy.default: role:''
   policy.csv: |
     p, role:org-admin, applications, *, */*, allow
     p, role:org-admin, clusters, get, *, allow
@@ -14,29 +14,22 @@ data:
     p, role:org-admin, logs, get, *, allow
     p, role:org-admin, exec, create, */*, allow
 
-    # dev
-    p, role:g_charlie_admin, applications/charlie-server-dev, create, g_charlie_admin/*, allow
-    p, role:g_charlie_admin, applications/charlie-server-dev, get, g_charlie_admin/*, allow
-    p, role:g_charlie_admin, applications/charlie-server-dev, sync, g_charlie_admin/*, allow
-
-    # qas
-    p, role:g_charlie_admin, applications/charlie-server-qas, create, g_charlie_admin/*, allow
-    p, role:g_charlie_admin, applications/charlie-server-qas, get, g_charlie_admin/*, allow
-    p, role:g_charlie_admin, applications/charlie-server-qas, sync, g_charlie_admin/*, allow
+    p, role:devops, applications, *, *, allow
+    p, role:developers, applications, *, *, allow
+    p, role:g_argocd_charlie_ro, applications, charlie-server-dev/*, *, allow
+    p, role:g_argocd_charlie_rw, applications, charlie-server-prd/*, *, allow
+    p, role:devops, clusters, get, *, allow
+    p, role:devops, repositories, get, *, allow
+    p, role:devops, repositories, create, *, allow
+    p, role:devops, repositories, update, *, allow
+    p, role:devops, repositories, delete, *, allow
+    p, role:devops, gpgkeys, get, *, allow
 
     # prd
-    p, role:g_charlie_admin, applications/charlie-server-prd, sync, g_charlie_admin/*, allow
+    p, alex_abreu, applications, sync, charlie-server-prd/*, allow
 
-    p, role:g_charlie_admin, logs, get, g_charlie_admin/*, allow
-    p, role:g_charlie_admin, exec, create, g_charlie_admin/*, allow
-    p, role:g_charlie_admin, projects, get, g_charlie_admin, allow
+    # devops
+    g, devops_user, role:devops
 
-    p, role:g_charlie_admin, projects, get, g_charlie_admin, allow
-
-    g, db-admins, role:g_charlie_admin
-
-    g, alex_abreu, role:g_charlie_admino
-
-    g, g_charlie_prj_ro, role:admin-charlie_prj_ro
-    g, g_charlie_prj_rw, role:admin-charlie_prj_rw
-
+    # alex_abreu
+    g, alex_abreu, role:g_argocd_charlie_rw
