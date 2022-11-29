@@ -6,4 +6,5 @@ data:
   policy.default: role:''
   policy.csv: |
     # prd
-    p, alex_abreu, applications, sync, **/*prd/*, allow
+    p, role:g_argocd_charlie_admin, applications, sync, */*, allow
+    p, alex_abreu, role:g_argocd_charlie_admin
