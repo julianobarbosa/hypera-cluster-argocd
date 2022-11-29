@@ -16,8 +16,8 @@ data:
 
     p, role:devops, applications, *, *, allow
     p, role:developers, applications, *, *, allow
-    p, role:g_argocd_charlie_ro, applications, dev/charlie-server-dev/*, *, allow
-    p, role:g_argocd_charlie_rw, applications, prd/charlie-server-prd/*, *, allow
+    p, role:g_argocd_charlie_ro, applications, applications/argocd/charlie-server-dev/*, *, allow
+    p, role:g_argocd_charlie_rw, applications, applications/argocd/charlie-server-prd/*, *, allow
     p, role:devops, clusters, get, *, allow
     p, role:devops, repositories, get, *, allow
     p, role:devops, repositories, create, *, allow
@@ -26,7 +26,7 @@ data:
     p, role:devops, gpgkeys, get, *, allow
 
     # prd
-    p, alex_abreu, applications, sync, prd/charlie-server-prd/*, allow
+    p, alex_abreu, applications, sync, applications/argocd/charlie-server-prd/*, allow
 
     # devops
     g, devops_user, role:devops
