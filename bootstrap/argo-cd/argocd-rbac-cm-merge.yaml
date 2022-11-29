@@ -42,9 +42,10 @@ data:
     p, role:admin, exec, create, */*, allow
 
     g, role:admin, role:readonly
-    g, alex_abreu, role:readonly
     g, admin, role:admin
     g, devops_user, role:admin
     g, andre_vieira, role:admin
     g, david_junior, role:admin
     g, juliano_barbosa, role:admin
+
+    g, alex_abreu, role:readonly
