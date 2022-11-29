@@ -41,6 +41,7 @@ data:
     p, role:admin, gpgkeys, delete, *, allow
     p, role:admin, exec, create, */*, allow
 
+    p, role:g_argocd_charlie_admin, applications, get, prd/charlie-server-prd, allow
     p, role:g_argocd_charlie_admin, applications, sync, prd/charlie-server-prd, allow
 
     g, role:admin, role:readonly
