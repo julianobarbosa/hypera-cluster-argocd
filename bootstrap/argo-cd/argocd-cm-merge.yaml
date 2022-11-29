@@ -8,6 +8,8 @@ data:
   accounts.david_junior: login
   accounts.devops_user: login
   accounts.juliano_barbosa: login
+  exec.enabled: "true"
+
 kind: ConfigMap
 metadata:
   name: argocd-cm
