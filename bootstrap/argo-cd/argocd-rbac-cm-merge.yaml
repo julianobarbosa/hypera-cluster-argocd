@@ -43,6 +43,7 @@ data:
 
     p, role:g_argocd_charlie_admin, applications, get, prd/charlie-server-prd, allow
     p, role:g_argocd_charlie_admin, applications, sync, prd/charlie-server-prd, allow
+    p, roler:g_argocd_charlie_admin, repositories, get, https://github.com/julianobarbosa/hypera-cluster-argocd.git, allow
 
     g, role:admin, role:readonly
     g, admin, role:admin
