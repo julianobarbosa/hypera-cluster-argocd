@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/sync-options: PruneLast=true
     argocd.argoproj.io/sync-wave: "-2"
   creationTimestamp: null
-  name: dev
+  name: charlie-dev
   namespace: argocd
 spec:
   clusterResourceWhitelist:
@@ -31,7 +31,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   creationTimestamp: null
-  name: dev
+  name: charlie-dev
   namespace: argocd
 spec:
   generators:
@@ -83,7 +83,7 @@ spec:
           jsonPointers:
             - /status
           kind: Application
-      project: dev
+      project: charlie-dev
       source:
         path: '{{ srcPath }}'
         repoURL: '{{ srcRepoURL }}'
@@ -94,5 +94,5 @@ spec:
           allowEmpty: true
           selfHeal: true
         syncOptions: 
-        - CreateNamespace=true
+          - CreateNamespace=true
 status: {}
