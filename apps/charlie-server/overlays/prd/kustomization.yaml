@@ -25,4 +25,4 @@ patchesStrategicMerge:
 
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
-  newTag: 1.0.0-2105-prd
+  newTag: 1.0.0-2111-prd
