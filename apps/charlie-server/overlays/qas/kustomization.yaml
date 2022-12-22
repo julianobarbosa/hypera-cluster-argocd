@@ -28,4 +28,4 @@ patchesStrategicMerge:
 
 images:
 - name: acrcharliehypera.azurecr.io/charlie-server
-  newTag: 1.0.0-2126-qas
+  newTag: 1.0.0-2127-qas
